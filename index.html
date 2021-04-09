@@ -1,5 +1,9 @@
 <html>
-    <head></head>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="api.js"></script>
+    </head>
     <body>
         <form action="/save-to-mongo" method="POST">
             <fieldset>
@@ -10,6 +14,10 @@
                 </div>
             </fieldset>
         </form>
+        <button id="loadDataBtn" onclick="loadDataFromDB('test')">Load data</button>
+        <div class="data">
+            <table id="data-table"></table>
+        </div>
     </body>
     <style>
         .input-field {
