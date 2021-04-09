@@ -1,6 +1,6 @@
 # html-nodejs-demo
 
-## Running Locally
+### Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
