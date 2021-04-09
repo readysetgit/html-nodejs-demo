@@ -1,16 +1,8 @@
-### This repository is no longer maintained!
-
-**For the most up to date test app to get you started on Heroku, head on over to [`node-js-getting-started`](https://github.com/heroku/node-js-getting-started).**
-
----
-
-# node-js-sample
-
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+# html-nodejs-demo
 
 ## Running Locally
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+Make sure you have [Node.js](http://nodejs.org/) installed.
 
 ```sh
 git clone git@github.com:heroku/node-js-sample.git # or clone your own fork
