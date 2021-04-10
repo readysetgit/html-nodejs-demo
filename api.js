@@ -18,9 +18,10 @@ const insertIntoElementById = (elementId, innerHtml) => {
     let finalHtml = innerHtml;
     if (Array.isArray(innerHtml)) {
         finalHtml = arrayToHtml(finalHtml, 'tr', 'td')
+    } else {
+        finalHtml = `<p>${finalHtml}</p>`
+        el.html(finalHtml);
     }
-    finalHtml = `<p>${finalHtml}</p>`
-    el.html(finalHtml);
 }
 
 const arrayToHtml = (arr, rowType, columnType) => {
