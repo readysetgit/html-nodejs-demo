@@ -6,6 +6,39 @@ const loadDataFromDB = (requestObj) => {
         })
 }
 
+const loadQuestionFromDB = () => {
+    $.get("/read-from-db") // Make HTTP GET call to nodeJS Server
+        .done(function(res) {
+            insertIntoElementById('question', res.data) // INSERT DATA INTO HTML
+        })
+}
+
+const insertIntoElementById = (elementId, innerHtml) => {
+    let el = $(`#${elementId}`);
+    let finalHtml = innerHtml;
+    if (Array.isArray(innerHtml)) {
+        finalHtml = arrayToHtml(finalHtml, 'tr', 'td')
+    }
+    finalHtml = `<p>${finalHtml}</p>`
+    el.html(finalHtml);
+}
+
+const arrayToHtml = (arr, rowType, columnType) => {
+    let innerHtml = '';
+    for (let item of arr) {
+        let itemCols = '';
+        for (const [key, value] of Object.entries(item) ) {
+            itemCols += `<${columnType}>${value}</${columnType}>`
+        }
+        innerHtml += `<${rowType}>${itemCols}</${rowType}>`;
+    }
+    return innerHtml;
+};
+
+$(document).ready(() => {
+    loadQuestionFromDB();
+})
+
 const insertIntoTable = (tableId, dataArray) => {
     $(`#${tableId}`).html('');
     let innerHtml = '';
