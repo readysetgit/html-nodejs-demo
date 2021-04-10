@@ -20,8 +20,8 @@ const insertIntoElementById = (elementId, innerHtml) => {
         finalHtml = arrayToHtml(finalHtml, 'tr', 'td')
     } else {
         finalHtml = `<p>${finalHtml}</p>`
-        el.html(finalHtml);
     }
+    el.html(finalHtml);
 }
 
 const arrayToHtml = (arr, rowType, columnType) => {
